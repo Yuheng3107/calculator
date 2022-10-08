@@ -41,6 +41,15 @@ div#calculator {
 #clear, #delete {
     width: 100%;
     flex: 1;
+    height: 100%;
+}
+
+#clear {
+    background-color: rgb(247, 125, 125);
+}
+
+#delete {
+    background-color: rgb(141, 141, 252);
 }
 
 button {

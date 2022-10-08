@@ -13,7 +13,7 @@
 
  function operatorCheck(text) {
     if (operator !== "") {
-        bottomNum = operate(operator, topNum, bottomNum); 
+        bottomNum = toString(operate(operator, topNum, bottomNum)); 
     }
     operator = text;
     topNum = bottomNum;
