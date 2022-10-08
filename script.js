@@ -5,6 +5,7 @@
  const divide = (a,b) => parseFloat(+a/+b).toFixed(2);
 
  function operate(operator, a, b) {
+
      if (operator === '+') return add(a,b);
      else if (operator === '-') return subtract(a,b);
      else if (operator === 'x') return multiply(a,b);
@@ -13,11 +14,11 @@
 
  function operatorCheck(text) {
     if (operator !== "") {
-        bottomNum = toString(operate(operator, topNum, bottomNum)); 
+        bottomNum = String(operate(operator, topNum, bottomNum)); 
     }
     operator = text;
     topNum = bottomNum;
-    bottomNum = 0;
+    bottomNum = "0";
  }
  const buttons = document.querySelectorAll('button');
  const bottom = document.querySelector('#bottom');
@@ -45,14 +46,16 @@
 
         else if (text === '=') {
             if (operator !== "") {
-                bottomNum = operate(operator, topNum, bottomNum);
+                bottomNum = String(operate(operator, topNum, bottomNum));
                 operator = ""; 
                 topNum = "";
             }
-            
         }
         else if (text === '.') {
-
+            bottomNum = String(bottomNum);
+            if (!bottomNum.includes('.')) {
+                bottomNum += '.'
+            }
         }
         else {
             
